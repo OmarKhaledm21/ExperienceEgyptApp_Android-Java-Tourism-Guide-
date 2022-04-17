@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">ExperienceEgypt</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+
+    <string name="museums_title">Museums</string>
+
+    <string name="historical_title">Historical Sites</string>
+
+    <string name="modern_title">Modern Sites</string>
+</resources>
