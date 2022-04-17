@@ -37,6 +37,9 @@ public class ListItemAdapter extends ArrayAdapter<SiteInformation> {
         TextView siteAddress = (TextView) listItemView.findViewById(R.id.site_address);
         siteAddress.setText(currentSite.getAddress());
 
+        ImageView imageView = (ImageView) listItemView.findViewById(R.id.image);
+        imageView.setImageResource(currentSite.getImg_res());
+
 
         return listItemView;
     }

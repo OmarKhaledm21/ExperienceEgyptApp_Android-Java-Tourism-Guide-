@@ -1,10 +1,11 @@
 package com.projects.experienceegypt;
 
+import android.content.Context;
 import android.content.Intent;
-import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -13,13 +14,19 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.ArrayList;
 
-public class HistoricalSitesFragment extends Fragment {
 
+public class HistoricalSitesFragment extends Fragment{
+    private Context context;
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        this.context = context;
+    }
     public HistoricalSitesFragment() {}
+
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -33,13 +40,10 @@ public class HistoricalSitesFragment extends Fragment {
 
         ArrayList<SiteInformation> sites = new ArrayList<>();
         sites.add(new SiteInformation("Pyramids","Al Haram, Nazlet El-Semman, Al Giza Desert, Giza Governorate",
-                "https://en.wikipedia.org/wiki/Egyptian_pyramids"));
+                "https://en.wikipedia.org/wiki/Egyptian_pyramids",R.drawable.pyramids));
 
         sites.add(new SiteInformation("Pyramids","Al Haram, Nazlet El-Semman, Al Giza Desert, Giza Governorate",
-                "https://en.wikipedia.org/wiki/Egyptian_pyramids"));
-
-        sites.add(new SiteInformation("Pyramids","Al Haram, Nazlet El-Semman, Al Giza Desert, Giza Governorate",
-                "https://en.wikipedia.org/wiki/Egyptian_pyramids"));
+                "https://en.wikipedia.org/wiki/Egyptian_pyramids",R.drawable.pyramids));
 
         ListView listView = (ListView) rootView.findViewById(R.id.item_list_view);
         ListItemAdapter adapter = new ListItemAdapter(getActivity(),0,sites);
